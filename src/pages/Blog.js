@@ -12,7 +12,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://architecture-backend-five.vercel.app/api/categories');
+        const response = await axios.get('https://architecture-server.vercel.app/api/categories');
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories", error);
@@ -28,8 +28,8 @@ const Blogs = () => {
       setLoading(true);
       try {
         const url = selectedCategory
-          ? `https://architecture-backend-five.vercel.app/api/blogs/category/${selectedCategory}`
-          : 'https://architecture-backend-five.vercel.app/api/blogs';
+          ? `https://architecture-server.vercel.app/api/blogs/category/${selectedCategory}`
+          : 'https://architecture-server.vercel.app/api/blogs';
         const response = await axios.get(url);
         setBlogs(response.data);
       } catch (error) {

@@ -13,7 +13,7 @@ function BlogDetail() {
     
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`https://architecture-backend-five.vercel.app/api/blogs/${id}`);
+        const response = await axios.get(`https://architecture-server.vercel.app/api/blogs/${id}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching the blog:', error);

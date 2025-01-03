@@ -45,7 +45,7 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await axios.post("https://architecture-backend-five.vercel.app/api/login", formData);
+      const response = await axios.post("https://architecture-server.vercel.app/api/login", formData);
 
       if (response.status === 200) {
         const { token, user } = response.data;
@@ -208,16 +208,16 @@ const LoginForm = () => {
                 padding: "10px",
                 fontSize: "16px",
                 color: "#fff",
-                backgroundColor: "#26a69a",
+                backgroundColor: "rgb(96, 63, 131)",
                 border: "none",
                 borderRadius: "4px",
                 cursor: "pointer",
               }}
               onMouseEnter={(e) =>
-                (e.target.style.backgroundColor = "#00796b")
+                (e.target.style.backgroundColor = "rgb(96, 63, 131)")
               }
               onMouseLeave={(e) =>
-                (e.target.style.backgroundColor = "#26a69a")
+                (e.target.style.backgroundColor = "rgb(96, 63, 131)")
               }
             >
               Login
@@ -228,14 +228,14 @@ const LoginForm = () => {
             <button
               onClick={handleSignupRedirect}
               style={{
-                color: "#26a69a",
+                color: "rgb(96, 63, 131)",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
                 textDecoration: "underline",
               }}
-              onMouseEnter={(e) => (e.target.style.color = "#00796b")}
-              onMouseLeave={(e) => (e.target.style.color = "#26a69a")}
+              onMouseEnter={(e) => (e.target.style.color = "rgb(96, 63, 131)")}
+              onMouseLeave={(e) => (e.target.style.color = "rgb(96, 63, 131)")}
             >
               Signup
             </button>

@@ -16,7 +16,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('https://architecture-backend-five.vercel.app/api/projects');
+        const response = await axios.get('https://architecture-server.vercel.app/api/projects');
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects', error);

@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 const FAQ = () => {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const base_URL = 'https://architecture-backend-five.vercel.app';
+  const base_URL = 'https://architecture-server.vercel.app';
 
   // Fetch FAQ data from API
   useEffect(() => {

@@ -17,7 +17,7 @@
 //   useEffect(() => {
 //     const fetchServices = async () => {
 //       try {
-//         const response = await axios.get('https://architecture-backend-five.vercel.app/api/services');
+//         const response = await axios.get('https://architecture-server.vercel.app/api/services');
 //         setServices(response.data);
 //       } catch (error) {
 //         console.error('Error fetching services', error);
@@ -198,7 +198,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get('https://architecture-backend-five.vercel.app/api/services');
+        const response = await axios.get('https://architecture-server.vercel.app/api/services');
         setServices(response.data);
       } catch (error) {
         console.error('Error fetching services', error);

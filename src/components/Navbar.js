@@ -1,7 +1,8 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Button, Drawer, List, ListItem, ListItemText, useTheme, useMediaQuery, Menu, MenuItem } from '@mui/material';
-import { Menu as MenuIcon, Close as CloseIcon, AccountCircle } from '@mui/icons-material';
+import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -19,7 +20,6 @@ const Navbar = () => {
   // Check if user is logged in when component mounts
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
-    console.log(user) ;// Retrieve user from localStorage
     if (storedUser) {
       setUser(storedUser);
     }
@@ -168,16 +168,21 @@ const Navbar = () => {
           {!user ? (
             <Button color="inherit" onClick={handleLoginClick}>Login</Button> // Show Login if no user
           ) : (
-            <IconButton color="inherit" onClick={handleUsernameClick}>
-              <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                {user.LastName} {/* Display user's first name */}
-              </Typography>
-            </IconButton>
+            <div>
+              {/* Display username in the navbar */}
+              <Button
+                color="inherit"
+                onClick={handleUsernameClick}
+                sx={{ fontWeight: 600, textTransform: 'capitalize' }}
+              >
+                {user.FirstName} {/* Display user's first name */}
+              </Button>
+            </div>
           )}
         </Toolbar>
       </AppBar>
 
-      {/* Account Options Menu */}
+      {/* Account Options Menu (Dropdown) */}
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
